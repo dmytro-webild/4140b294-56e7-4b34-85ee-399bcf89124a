@@ -46,6 +46,7 @@ export default function LandingPage() {
             title="Luxury Plumbing Services for GTA Estates"
             description="Master-level plumbing craftsmanship meets uncompromising 24/7 reliability. Experience the Gold Standard in residential and commercial plumbing."
             buttons={[{ text: "Book Consultation", href: "#contact" }]}
+            testimonials={[]}
             imageSrc="http://img.b2bpic.net/free-photo/modern-luxury-bathroom-interior_1048-8424.jpg"
             avatars={[]}
             avatarText="Serving the GTA for 25+ years"
@@ -61,6 +62,7 @@ export default function LandingPage() {
               { icon: Wrench, label: "Years Served", value: "25+" }
             ]}
             metricsAnimation="slide-up"
+            useInvertedBackground={false}
           />
         </div>
 
@@ -70,6 +72,8 @@ export default function LandingPage() {
             description="From intricate luxury fixture installations to industrial-grade drain solutions."
             gridVariant="three-columns-all-equal-width"
             animationType="slide-up"
+            textboxLayout="default"
+            useInvertedBackground={false}
             products={[
               { id: "1", name: "Luxury Fixture Installation", price: "Custom Quote", imageSrc: "http://img.b2bpic.net/free-photo/elegant-bathroom-faucet_1048-5231.jpg" },
               { id: "2", name: "Advanced Pipe Relining", price: "Long-lasting", imageSrc: "http://img.b2bpic.net/free-photo/plumbing-pipes-background_1048-8212.jpg" },
@@ -83,6 +87,7 @@ export default function LandingPage() {
             title="Meet Our Lead Experts"
             description="Our master technicians are trained in the highest standards of plumbing excellence."
             textboxLayout="default"
+            useInvertedBackground={false}
             team={[
               { id: "1", name: "Robert Vance", role: "Master Plumber", imageSrc: "http://img.b2bpic.net/free-photo/portrait-confident-man-smiling_1048-1241.jpg" },
               { id: "2", name: "Elena Rossi", role: "Lead Technician", imageSrc: "http://img.b2bpic.net/free-photo/portrait-female-technician_1048-1245.jpg" }
@@ -96,6 +101,8 @@ export default function LandingPage() {
             title="Client Testimonials"
             description="Luxury service defined by our happy clients."
             animationType="slide-up"
+            textboxLayout="default"
+            useInvertedBackground={false}
             testimonials={[
               { id: "1", name: "Arthur Sterling", role: "Estate Owner", testimonial: "The finest plumbing service I have ever experienced in Toronto.", icon: MessageSquare }
             ]}
@@ -105,6 +112,9 @@ export default function LandingPage() {
         <div id="faq" data-section="faq">
           <FaqSplitMedia
             title="Frequently Asked Questions"
+            description=""
+            textboxLayout="default"
+            useInvertedBackground={false}
             faqs={[
               { id: "1", title: "Do you handle emergencies?", content: "Yes, 24/7 dedicated emergency line." },
               { id: "2", title: "Are you licensed?", content: "Fully licensed, bonded, and RedSeal certified." }
@@ -120,6 +130,8 @@ export default function LandingPage() {
             title="Immediate Help Available"
             description="Call us now for a priority emergency dispatch."
             buttons={[{ text: "Call 416-800-1991", href: "tel:+14168001991" }]}
+            background={{ variant: "plain" }}
+            useInvertedBackground={false}
           />
         </div>
 
@@ -127,6 +139,7 @@ export default function LandingPage() {
           <ContactSplitForm
             title="Schedule an Appointment"
             description="Request a premium consultation for your home or business."
+            useInvertedBackground={false}
             inputs={[
               { name: "name", type: "text", placeholder: "Full Name" },
               { name: "email", type: "email", placeholder: "Email Address" }
