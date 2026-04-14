@@ -3,286 +3,147 @@
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import ReactLenis from "lenis/react";
 import ContactSplitForm from '@/components/sections/contact/ContactSplitForm';
-import FaqSplitText from '@/components/sections/faq/FaqSplitText';
-import FooterBase from '@/components/sections/footer/FooterBase';
+import ContactCTA from '@/components/sections/contact/ContactCTA';
+import FaqSplitMedia from '@/components/sections/faq/FaqSplitMedia';
+import FooterLogoEmphasis from '@/components/sections/footer/FooterLogoEmphasis';
 import HeroOverlayTestimonial from '@/components/sections/hero/HeroOverlayTestimonial';
 import NavbarStyleFullscreen from '@/components/navbar/NavbarStyleFullscreen/NavbarStyleFullscreen';
-import ProductCardOne from '@/components/sections/product/ProductCardOne';
-import SplitAbout from '@/components/sections/about/SplitAbout';
+import ProductCardThree from '@/components/sections/product/ProductCardThree';
+import AboutMetric from '@/components/sections/about/AboutMetric';
+import TeamCardFive from '@/components/sections/team/TeamCardFive';
+import TestimonialCardTwo from '@/components/sections/testimonial/TestimonialCardTwo';
+import { Zap, ShieldCheck, Wrench, Users, MessageSquare } from 'lucide-react';
 
 export default function LandingPage() {
   return (
     <ThemeProvider
         defaultButtonVariant="bounce-effect"
         defaultTextAnimation="entrance-slide"
-        borderRadius="pill"
-        contentWidth="compact"
+        borderRadius="rounded"
+        contentWidth="medium"
         sizing="medium"
-        background="circleGradient"
-        cardStyle="gradient-mesh"
+        background="none"
+        cardStyle="outline"
         primaryButtonStyle="gradient"
-        secondaryButtonStyle="glass"
-        headingFontWeight="semibold"
+        secondaryButtonStyle="solid"
+        headingFontWeight="bold"
     >
       <ReactLenis root>
-  <div id="nav" data-section="nav">
-      <NavbarStyleFullscreen
-      navItems={[
-        {
-          name: "Services",
-          id: "#services",
-        },
-        {
-          name: "Projects",
-          id: "#projects",
-        },
-        {
-          name: "Team",
-          id: "#about",
-        },
-        {
-          name: "Contact",
-          id: "#contact",
-        },
-      ]}
-      brandName="Plumber Near Me"
-      button={{
-        text: "Book Now",
-        href: "#contact",
-      }}
-    />
-  </div>
+        <div id="nav" data-section="nav">
+          <NavbarStyleFullscreen
+            navItems={[
+              { name: "Services", id: "#services" },
+              { name: "Projects", id: "#projects" },
+              { name: "Team", id: "#about" },
+              { name: "Contact", id: "#contact" },
+            ]}
+            brandName="Plumber Near Me"
+          />
+        </div>
 
-  <div id="hero" data-section="hero">
-      <HeroOverlayTestimonial
-      title="Toronto's Most Trusted Plumbing Experts"
-      description="Certified professionals serving the Greater Toronto Area. Available 24/7 with 1-hour emergency response."
-      testimonials={[
-        {
-          name: "John D.",
-          handle: "Georgetown",
-          testimonial: "Incredible service, arrived within the hour as promised.",
-          rating: 5,
-          imageSrc: "http://img.b2bpic.net/free-photo/portrait-man-smiling-camera_23-2148238839.jpg",
-        },
-        {
-          name: "Sarah L.",
-          handle: "Mississauga",
-          testimonial: "Professional, clean, and extremely knowledgeable staff.",
-          rating: 5,
-          imageSrc: "http://img.b2bpic.net/free-photo/happy-business-woman-white-shirt_23-2148095748.jpg",
-        },
-        {
-          name: "Mark R.",
-          handle: "Toronto",
-          testimonial: "Fixed our major pipe leak without any mess. Highly recommend.",
-          rating: 5,
-          imageSrc: "http://img.b2bpic.net/free-photo/middle-age-man-with-grey-hair-dark-color-shirt-looking-up-puzzled-thinking-crossing-hands-his-chest-standing-brown-background_141793-133897.jpg",
-        },
-        {
-          name: "Emily K.",
-          handle: "Halton Hills",
-          testimonial: "Responsive and fair pricing. Best plumbing team in the city.",
-          rating: 5,
-          imageSrc: "http://img.b2bpic.net/free-photo/confident-smiling-young-woman-standing-kitchen_23-2147916396.jpg",
-        },
-        {
-          name: "David P.",
-          handle: "GTA",
-          testimonial: "Technicians were respectful and fixed everything quickly.",
-          rating: 5,
-          imageSrc: "http://img.b2bpic.net/free-photo/expressive-senior-female-posing-indoor_344912-362.jpg",
-        },
-      ]}
-      buttons={[
-        {
-          text: "Book a Free Assessment",
-          href: "#contact",
-        },
-      ]}
-      imageSrc="http://img.b2bpic.net/free-photo/3d-render-plumber-fixing-leak_1048-5619.jpg"
-      avatars={[
-        {
-          src: "http://img.b2bpic.net/free-photo/casual-teenager-posing-outdoors_23-2148804653.jpg",
-          alt: "Happy client 1",
-        },
-        {
-          src: "http://img.b2bpic.net/free-photo/closeup-goodlooking-tender-friendly-pretty-middleaged-30s-woman-extend-arm-hold-camera-hand-smiling-broadly-taking-selfie-photographing-record-videomessage-calling-husband_176420-51274.jpg",
-          alt: "Happy client 2",
-        },
-        {
-          src: "http://img.b2bpic.net/free-photo/cheerful-bearded-man_1098-22109.jpg",
-          alt: "Happy client 3",
-        },
-        {
-          src: "http://img.b2bpic.net/free-photo/woman-blue-coat-street_158595-2587.jpg",
-          alt: "Happy client 4",
-        },
-        {
-          src: "http://img.b2bpic.net/free-photo/smiling-female-staff-airport-terminal_107420-85049.jpg",
-          alt: "Happy client 5",
-        },
-      ]}
-      avatarText="Trusted by 5,000+ GTA homeowners"
-    />
-  </div>
+        <div id="hero" data-section="hero">
+          <HeroOverlayTestimonial
+            title="Luxury Plumbing Services for GTA Estates"
+            description="Master-level plumbing craftsmanship meets uncompromising 24/7 reliability. Experience the Gold Standard in residential and commercial plumbing."
+            buttons={[{ text: "Book Consultation", href: "#contact" }]}
+            imageSrc="http://img.b2bpic.net/free-photo/modern-luxury-bathroom-interior_1048-8424.jpg"
+            avatars={[]}
+            avatarText="Serving the GTA for 25+ years"
+          />
+        </div>
 
-  <div id="services" data-section="services">
-      <ProductCardOne
-      animationType="slide-up"
-      textboxLayout="default"
-      gridVariant="four-items-2x2-equal-grid"
-      useInvertedBackground={true}
-      products={[
-        {
-          id: "p1",
-          name: "Drain Repair & Replacement",
-          price: "Expert Service",
-          imageSrc: "http://img.b2bpic.net/free-photo/bleu-run-scarce-bathroom-washroom_1172-546.jpg",
-        },
-        {
-          id: "p2",
-          name: "Waterproofing Systems",
-          price: "Guaranteed Results",
-          imageSrc: "http://img.b2bpic.net/free-photo/full-shot-young-man-drinking-water-stairs_23-2148375985.jpg",
-        },
-        {
-          id: "p3",
-          name: "Leak Detection",
-          price: "Advanced Tech",
-          imageSrc: "http://img.b2bpic.net/free-photo/concentrated-senior-man-looking-his-tablet_23-2148404390.jpg",
-        },
-        {
-          id: "p4",
-          name: "CCTV Inspection",
-          price: "High Precision",
-          imageSrc: "http://img.b2bpic.net/free-photo/excited-stock-market-trader-with-hands-up-celebrating-big-sale-times-stock-market-crash-multiple-displays-with-real-time-trading-data_482257-30732.jpg",
-        },
-        {
-          id: "p5",
-          name: "Rough-in Plumbing",
-          price: "Code Compliant",
-          imageSrc: "http://img.b2bpic.net/free-photo/3d-rendering-hydraulic-elements_23-2149333323.jpg",
-        },
-        {
-          id: "p6",
-          name: "Fixture Installation",
-          price: "Premium Finish",
-          imageSrc: "http://img.b2bpic.net/free-photo/pro-kitchen-sprayer-sleek-sink-stone-backsplash_169016-69285.jpg",
-        },
-      ]}
-      title="Our Premium Plumbing Services"
-      description="Comprehensive residential, commercial, and industrial solutions."
-    />
-  </div>
+        <div id="trust-bar" data-section="trust-bar">
+          <AboutMetric 
+            title="Our Commitment to Excellence"
+            metrics={[
+              { icon: Zap, label: "Response Time", value: "< 60 Mins" },
+              { icon: ShieldCheck, label: "Certified Pros", value: "RedSeal" },
+              { icon: Wrench, label: "Years Served", value: "25+" }
+            ]}
+            metricsAnimation="slide-up"
+          />
+        </div>
 
-  <div id="why-us" data-section="why-us">
-      <SplitAbout
-      textboxLayout="split"
-      useInvertedBackground={false}
-      title="Why Choose Plumber Near Me?"
-      description="Born from a mission to serve GTA homeowners with total honesty and technical excellence."
-      bulletPoints={[
-        {
-          title: "We Listen",
-          description: "We start with a thorough diagnosis of your specific plumbing needs.",
-        },
-        {
-          title: "We Diagnose",
-          description: "Using CCTV technology to ensure accuracy, never guesswork.",
-        },
-        {
-          title: "We Deliver",
-          description: "Prompt, professional service with a focus on your 100% satisfaction.",
-        },
-      ]}
-      imageSrc="http://img.b2bpic.net/free-photo/medium-shot-smiley-construction-workers_23-2149366627.jpg"
-      mediaAnimation="slide-up"
-    />
-  </div>
+        <div id="services" data-section="services">
+          <ProductCardThree
+            title="Premium Services"
+            description="From intricate luxury fixture installations to industrial-grade drain solutions."
+            gridVariant="three-columns-all-equal-width"
+            animationType="slide-up"
+            products={[
+              { id: "1", name: "Luxury Fixture Installation", price: "Custom Quote", imageSrc: "http://img.b2bpic.net/free-photo/elegant-bathroom-faucet_1048-5231.jpg" },
+              { id: "2", name: "Advanced Pipe Relining", price: "Long-lasting", imageSrc: "http://img.b2bpic.net/free-photo/plumbing-pipes-background_1048-8212.jpg" },
+              { id: "3", name: "Leak Detection", price: "Precision Tech", imageSrc: "http://img.b2bpic.net/free-photo/water-drop-leak_1048-5123.jpg" }
+            ]}
+          />
+        </div>
 
-  <div id="faq" data-section="faq">
-      <FaqSplitText
-      useInvertedBackground={true}
-      faqs={[
-        {
-          id: "f1",
-          title: "Do you offer emergency plumbing?",
-          content: "Yes, we provide 24/7 emergency response in the GTA.",
-        },
-        {
-          id: "f2",
-          title: "What areas do you serve?",
-          content: "We serve Toronto, Georgetown, Halton Hills, and the entire GTA region.",
-        },
-        {
-          id: "f3",
-          title: "Are you RedSeal certified?",
-          content: "Yes, all our master plumbers are RedSeal certified.",
-        },
-      ]}
-      sideTitle="Common Questions"
-      faqsAnimation="slide-up"
-    />
-  </div>
+        <div id="why-choose-us" data-section="why-choose-us">
+          <TeamCardFive
+            title="Meet Our Lead Experts"
+            description="Our master technicians are trained in the highest standards of plumbing excellence."
+            textboxLayout="default"
+            team={[
+              { id: "1", name: "Robert Vance", role: "Master Plumber", imageSrc: "http://img.b2bpic.net/free-photo/portrait-confident-man-smiling_1048-1241.jpg" },
+              { id: "2", name: "Elena Rossi", role: "Lead Technician", imageSrc: "http://img.b2bpic.net/free-photo/portrait-female-technician_1048-1245.jpg" }
+            ]}
+            animationType="slide-up"
+          />
+        </div>
 
-  <div id="contact" data-section="contact">
-      <ContactSplitForm
-      useInvertedBackground={false}
-      title="Need a Reliable Plumber?"
-      description="Call us at 416-800-1991 or fill out the booking form below for a free estimate."
-      inputs={[
-        {
-          name: "name",
-          type: "text",
-          placeholder: "Your Name",
-          required: true,
-        },
-        {
-          name: "phone",
-          type: "tel",
-          placeholder: "Your Phone",
-          required: true,
-        },
-      ]}
-      imageSrc="http://img.b2bpic.net/free-photo/map-pin-front-side-with-white-background_187299-39906.jpg"
-    />
-  </div>
+        <div id="testimonials" data-section="testimonials">
+          <TestimonialCardTwo
+            title="Client Testimonials"
+            description="Luxury service defined by our happy clients."
+            animationType="slide-up"
+            testimonials={[
+              { id: "1", name: "Arthur Sterling", role: "Estate Owner", testimonial: "The finest plumbing service I have ever experienced in Toronto.", icon: MessageSquare }
+            ]}
+          />
+        </div>
 
-  <div id="footer" data-section="footer">
-      <FooterBase
-      columns={[
-        {
-          title: "Services",
-          items: [
-            {
-              label: "Drain Repair",
-              href: "#services",
-            },
-            {
-              label: "Waterproofing",
-              href: "#services",
-            },
-          ],
-        },
-        {
-          title: "Company",
-          items: [
-            {
-              label: "About Us",
-              href: "#about",
-            },
-            {
-              label: "Contact",
-              href: "#contact",
-            },
-          ],
-        },
-      ]}
-      logoText="Plumber Near Me"
-      copyrightText="© 2025 Plumber Near Me Inc."
-    />
-  </div>
+        <div id="faq" data-section="faq">
+          <FaqSplitMedia
+            title="Frequently Asked Questions"
+            faqs={[
+              { id: "1", title: "Do you handle emergencies?", content: "Yes, 24/7 dedicated emergency line." },
+              { id: "2", title: "Are you licensed?", content: "Fully licensed, bonded, and RedSeal certified." }
+            ]}
+            faqsAnimation="slide-up"
+            imageSrc="http://img.b2bpic.net/free-photo/modern-tools-arrangement_1048-9123.jpg"
+          />
+        </div>
+
+        <div id="emergency-cta" data-section="emergency-cta">
+          <ContactCTA 
+            tag="Emergency Assistance"
+            title="Immediate Help Available"
+            description="Call us now for a priority emergency dispatch."
+            buttons={[{ text: "Call 416-800-1991", href: "tel:+14168001991" }]}
+          />
+        </div>
+
+        <div id="contact" data-section="contact">
+          <ContactSplitForm
+            title="Schedule an Appointment"
+            description="Request a premium consultation for your home or business."
+            inputs={[
+              { name: "name", type: "text", placeholder: "Full Name" },
+              { name: "email", type: "email", placeholder: "Email Address" }
+            ]}
+            imageSrc="http://img.b2bpic.net/free-photo/luxury-home-exterior_1048-8422.jpg"
+          />
+        </div>
+
+        <div id="footer" data-section="footer">
+          <FooterLogoEmphasis
+            logoText="Plumber Near Me"
+            columns={[
+              { items: [{ label: "Services" }, { label: "Careers" }] },
+              { items: [{ label: "Contact" }, { label: "Privacy" }] }
+            ]}
+          />
+        </div>
       </ReactLenis>
     </ThemeProvider>
   );
